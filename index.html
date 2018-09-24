@@ -21,6 +21,43 @@
 	<canvas id="canv" style="display: block;">
 		Please update your browser to see this content.
 	</canvas>
-	
+
+	<script type="text/javascript">
+
+		function DCanvas(el) 
+		{
+			const ctx = el.getContext('2d');
+			const pixel = 20;
+
+			let is_mouse_down = false;
+
+			canv.width = 500;
+			canv.height = 500;
+
+			// Methods
+			this.drawLine = function(x1, y1, x2, y2, color = 'gray') {
+				ctx.beginPath();
+				ctx.strokeStyle = color;
+				ctx.lineJoin = 'miter';
+				ctx.lineWidth = 1;
+				ctx.moveTo(x1, y1);
+				ctx.lineTo(x2, y2);
+				ctx.stroke();
+			}
+
+			this.drawCell = function(x, y, w, h) {
+				ctx.fillStyle = 'blue';
+				ctx.strokeStyle = 'blue';
+				ctx.lineJoin = 'miter';
+				ctx.lineWidth = 1;
+				ctx.rect(x, y, w, h);
+				ctx.fill();
+			}
+
+		} // end funvtion DCanvas(el)
+
+		
+	</script>
+
 </body>
 </html>
