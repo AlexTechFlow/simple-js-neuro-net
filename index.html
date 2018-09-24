@@ -54,7 +54,13 @@
 				ctx.fill();
 			}
 
+			this.clear = function() {
+				ctx.clearRect(0, 0, canv.width, canv.height);
+			}
+
 		} // end funvtion DCanvas(el)
+
+		const d = new DCanvas(document.getElementById('canv'));
 
 		
 	</script>
